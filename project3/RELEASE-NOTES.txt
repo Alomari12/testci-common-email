@@ -1,0 +1,57 @@
+Commons Email Package
+Version 1.3.2
+Release Notes
+
+INTRODUCTION:
+
+Commons Email provides an API for sending email, building on the JavaMail API to present a simplified interface for developers who are not email experts. It is a compact component with a small number of classes.
+
+For the most recent information, downloads, reports, and bug status, please visit the Commons Email website:
+
+http://commons.apache.org/email/
+
+This is a maintenance release that fixes several bugs from the 1.3.1 release. All current users are encouraged to upgrade.
+
+CHANGES FROM 1.3.1:
+
+Compatibility:
+
+Java 5 or later is required (unchanged since 1.3).
+Fixed Bugs:
+
+Changed visibility of DataSourceUrlResourceResolver.createUrl(String) to protected so that sub-classes can override it. (EMAIL-135)
+Added support for default mime charset property "mail.mime.charset" when adding text content to instances of either SimpleEmail or HtmlEmail. (EMAIL-104)
+Added support for sending partial emails in case of invalid addresses. (EMAIL-132)
+MimeMessageParser now correctly parses MIME multi-parts of type "text/plain" and "text/html" with a content disposition header of "attachment". (EMAIL-131)
+Fixed an issue where special characters in the body of an HTML email could lead to an exception when building the mime message. (EMAIL-127)
+CHANGES FROM 1.3:
+
+Compatibility:
+
+Java 5 or later is required (unchanged since 1.3).
+Fixed Bugs:
+
+DataSourceClassPathResolver now correctly sets the DataSource name for resolved resources. (EMAIL-125)
+Header values are not folded twice anymore, and encoding and folding are now only performed in Email.buildMimeMessage(). (EMAIL-124)
+CHANGES FROM 1.2:
+
+Compatibility:
+
+Java 5 or later is now required.
+New Features:
+
+Added new methods addTo(String[]), addCc(String[]), and addBcc(String[]) to Email. (EMAIL-114)
+HtmlmageEmail now supports class path resources. (EMAIL-108)
+Added a MultiPartEmail.attach(File) method for attaching a file.
+Added MimeMessageParser and MimeMessageUtils.
+Fixed Bugs:
+
+Fixed various issues related to encoding, folding, and attachment handling.
+REQUIREMENTS:
+
+Commons Email requires JavaMail 1.4.1 or later, and the JavaBeans Activation Framework unless running on Java SE 6 or later. It has been tested with JDK 1.5 and 1.6. For J2EE environments, Commons Email is compatible with all certified Java Enterprise Edition 5 implementations.
+
+
+
+
+
